@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
 import { getNombre } from '@/lib/destinos'
+import ImgFallback from '@/components/ImgFallback'
 
 interface Props { params: { destino: string } }
 
@@ -22,9 +23,7 @@ export default function SeguroPage({ params }: Props) {
         }
       `}</style>
 
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/assets/Staff.png" alt="Staff Serrano" style={{ borderRadius: 12, width: '100%', marginBottom: 20 }}
-        onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }} />
+      <ImgFallback src="/assets/Staff.png" alt="Staff Serrano" style={{ borderRadius: 12, width: '100%', marginBottom: 20 }} />
 
       <span className="experience-badge">🏆 29 AÑOS DE TRAYECTORIA</span>
       <h2 style={{ marginBottom: 16, marginTop: 8 }}>🏥 Coordinación y Seguridad</h2>

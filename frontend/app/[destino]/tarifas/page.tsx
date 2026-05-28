@@ -124,8 +124,7 @@ export default function TarifasPage() {
       {/* HEADER IMAGE */}
       <div style={{ maxWidth: 700, margin: '0 auto 20px' }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={headerImg} alt="Tarifas" style={{ width: '100%', borderRadius: 10, marginTop: -20 }}
-          onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }} />
+        <img src={headerImg} alt="Tarifas" style={{ width: '100%', borderRadius: 10, marginTop: -20 }} />
       </div>
 
       {/* SELECTOR TEMPORADA (solo San Pedro) */}

@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { getNombre, COLOR } from '@/lib/destinos'
+import ImgFallback from '@/components/ImgFallback'
 
 interface Props { params: { destino: string } }
 
@@ -74,11 +75,10 @@ export default function DestinoPage({ params }: Props) {
           <Link href={`/${slug}/hoteleria`} className="dest-btn">Ver opciones de Hotelería</Link>
         </div>
         <div className="dest-img">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <ImgFallback
             src={slug === 'san-pedro' ? '/assets/landing_sanPedro_imagen.png' : '/assets/landingcarlospazimagen.png'}
             alt={nombre}
-            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }}
+            style={{ width: '100%', borderRadius: 20, boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}
           />
         </div>
       </div>

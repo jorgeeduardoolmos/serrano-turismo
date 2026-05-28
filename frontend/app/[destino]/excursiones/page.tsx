@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
 import { getNombre } from '@/lib/destinos'
+import ImgFallback from '@/components/ImgFallback'
 
 interface Props { params: { destino: string } }
 
@@ -97,16 +98,12 @@ export default function ExcursionesPage({ params }: Props) {
         </>
       ) : (
         <>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/sanpedroexc.jpg" alt="Excursiones San Pedro" style={{ borderRadius: 12, marginBottom: 20, width: '100%' }}
-            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none' }} />
+          <ImgFallback src="/assets/sanpedroexc.jpg" alt="Excursiones San Pedro" style={{ borderRadius: 12, marginBottom: 20, width: '100%' }} />
           <h2 style={{ marginBottom: 16 }}>🏞️ Excursiones San Pedro</h2>
 
           <div className="two-col" style={{ marginBottom: 20 }}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/assets/imagen1.jpg" alt="" style={{ borderRadius: 10 }} onError={(e) => { (e.target as HTMLImageElement).style.display='none' }} />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/assets/imagen2.jpg" alt="" style={{ borderRadius: 10 }} onError={(e) => { (e.target as HTMLImageElement).style.display='none' }} />
+            <ImgFallback src="/assets/imagen1.jpg" alt="" style={{ borderRadius: 10 }} />
+            <ImgFallback src="/assets/imagen2.jpg" alt="" style={{ borderRadius: 10 }} />
           </div>
 
           {[
@@ -117,10 +114,7 @@ export default function ExcursionesPage({ params }: Props) {
             { title: '🏙️ 5. City Tour', desc: 'Recorrido por barrancas y compras regionales.', tag: 'Cultura', img: null },
           ].map((exc) => (
             <div key={exc.title} className="exc-card" style={{ marginBottom: 16 }}>
-              {exc.img && (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img src={exc.img} alt={exc.title} onError={(e) => { (e.target as HTMLImageElement).style.display='none' }} />
-              )}
+              {exc.img && <ImgFallback src={exc.img} alt={exc.title} />}
               <div className="exc-content">
                 <div className="exc-title">{exc.title}</div>
                 <div className="exc-desc">{exc.desc}</div>
