@@ -6,6 +6,9 @@
    SERRANO TURISMO — Design tokens
    ============================================================ */
 :root {
+  /* Font variables (populated via Google Fonts <link> in layout.tsx) */
+  --font-head: 'Montserrat', system-ui, sans-serif;
+  --font-body: 'Source Sans 3', system-ui, sans-serif;
   --ink:          #15222D;
   --ink-2:        #1E303D;
   --ink-3:        #2B3E4B;
