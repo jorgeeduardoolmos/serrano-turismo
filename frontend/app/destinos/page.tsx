@@ -13,6 +13,7 @@ import {
   Star,
   Utensils,
   Wifi,
+  type LucideIcon,
 } from 'lucide-react'
 
 type Tab = 'sanpedro' | 'carlospaz'
@@ -244,7 +245,7 @@ function DestinosContent() {
                   [Utensils, 'Comidas', 'Desayuno, almuerzo, merienda y cena'],
                   [Music, 'Noches', 'Boliches y fiestas exclusivas'],
                   [Wifi, 'Conectividad', 'App + WiFi en el hotel'],
-                ] as [React.ComponentType<{ size?: number; style?: React.CSSProperties }>, string, string][]
+                ] as [LucideIcon, string, string][]
               ).map(([Icon, t, s]) => (
                 <div
                   key={t}
@@ -256,7 +257,7 @@ function DestinosContent() {
                     boxShadow: 'var(--sh-sm)',
                   }}
                 >
-                  <Icon size={24} style={{ color: 'var(--accent-strong)' } as React.CSSProperties} />
+                  <Icon size={24} style={{ color: 'var(--accent-strong)' }} />
                   <div
                     style={{
                       marginTop: 14,

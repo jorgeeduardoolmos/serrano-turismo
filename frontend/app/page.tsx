@@ -15,6 +15,7 @@ import {
   Star,
   Users,
   Utensils,
+  type LucideIcon,
 } from 'lucide-react'
 
 /* ---- Animated count-up stat ---- */
@@ -27,7 +28,7 @@ function StatCounter({
   value: number
   suffix?: string
   label: string
-  icon: React.ComponentType<{ size?: number; style?: React.CSSProperties }>
+  icon: LucideIcon
 }) {
   const ref = useRef<HTMLDivElement>(null)
   const [n, setN] = useState(0)
@@ -216,7 +217,7 @@ function StrengthCard({
   title,
   text,
 }: {
-  icon: React.ComponentType<{ size?: number }>
+  icon: LucideIcon
   title: string
   text: string
 }) {
@@ -386,10 +387,10 @@ export default function HomePage() {
               [Bus, 'Flota propia y habilitada'],
               [Users, 'Coordinadores en cada grupo'],
               [Utensils, 'Pensión completa incluida'],
-            ] as [React.ComponentType<{ size?: number; style?: React.CSSProperties }>, string][]
+            ] as [LucideIcon, string][]
           ).map(([Icon, t]) => (
             <div key={t} style={{ display: 'flex', alignItems: 'center', gap: 13 }}>
-              <Icon size={24} style={{ color: 'var(--gold-soft)', flexShrink: 0 } as React.CSSProperties} />
+              <Icon size={24} style={{ color: 'var(--gold-soft)', flexShrink: 0 }} />
               <span style={{ fontFamily: 'var(--font-head)', fontWeight: 600, fontSize: 15 }}>
                 {t}
               </span>
